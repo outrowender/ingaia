@@ -1,0 +1,26 @@
+{
+  "name": "metric-api",
+  "version": "1.0.0",
+  "description": "A simple api that returns a per square meter value",
+  "main": "server.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/outrowender/ingaia/back/metric-api"
+  },
+  "author": "Wender",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12"
+  },
+  "devDependencies": {
+    "jest": "^27.0.3",
+    "mongodb-memory-server": "^6.9.6"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
