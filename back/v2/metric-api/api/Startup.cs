@@ -1,13 +1,14 @@
 using System.Linq;
 using metric_api.Data;
+using metric_api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
-using metric_api.Models;
 
 namespace metric_api
 {
@@ -26,8 +27,9 @@ namespace metric_api
             services.AddDbContext<DataContext>(opt =>
             {
                 opt.UseInMemoryDatabase("MetricsDatabase");
-            });
-            services.AddControllers();
+            })
+                .AddControllers()
+                .AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,13 +55,12 @@ namespace metric_api
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-
                 var context = serviceScope.ServiceProvider.GetRequiredService<DataContext>();
 
                 if (!context.Metrics.Any())
                 {
                     logger.LogInformation("Database seed started");
-                    var newMetrics = new SquareMeter(10); //TODO: add this to config file
+                    var newMetrics = new SquareMeter(10); //TODO: add this to a static file
 
                     context.Metrics.Add(newMetrics);
                     context.SaveChanges();
