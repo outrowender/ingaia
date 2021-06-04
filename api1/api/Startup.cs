@@ -57,7 +57,7 @@ namespace metric_api
                 if (!context.Metrics.Any())
                 {
                     logger.LogInformation("Database seed started");
-                    var newMetrics = new SquareMeter(10); //TODO: add this to a static file
+                    var newMetrics = new SquareMeter(GetSquareMeterValue());
 
                     context.Metrics.Add(newMetrics);
                     context.SaveChanges();
@@ -67,5 +67,9 @@ namespace metric_api
 
             }
         }
+
+        private float GetSquareMeterValue() => 10;
+        //TODO: this can be added to a configuration file, and configured to restart the application everytime the file change.
+
     }
 }
