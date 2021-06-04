@@ -20,6 +20,5 @@ namespace metric_api.Controllers
 
             return StatusCode(200, metrics);
         }
-
     }
 }
