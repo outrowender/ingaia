@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  fivem:
+    build:
+      context: .
+      dockerfile: Dockerfile
