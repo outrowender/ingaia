@@ -2,11 +2,12 @@ import { badRequest, ok, unprocessableEntity } from "../../shared/helpers/HttpHe
 import { IController } from "../../shared/interfaces/IController";
 import { IHttpRequest, IHttpResponse } from "../../shared/interfaces/IHttp";
 import { CalculateHouseUseCase } from "./CalculateHouseUseCase";
+import { ICalculateHouseResponseDTO } from "./ICalculateHouseDTO";
 
 export class CalculateHouseController implements IController {
     constructor(private useCase: CalculateHouseUseCase) { }
 
-    async handle(request: IHttpRequest): Promise<IHttpResponse> {
+    async handle(request: IHttpRequest): Promise<IHttpResponse<ICalculateHouseResponseDTO>> {
 
         const valid = this.validate(request.body)
         if (!valid) return unprocessableEntity(new Error('Size is invalid'))
@@ -19,11 +20,10 @@ export class CalculateHouseController implements IController {
         } catch (error) {
             return badRequest(new Error(error.message || 'Unexpected Error'))
         }
-
     }
 
     private validate(obj: object) {
-        if (!obj['size']) return false //check value
+        if (!obj || !obj['size']) return false //check value
         if (isNaN(obj['size'])) return false //check type
         if (obj['size'] < 10 || obj['size'] > 10000) return false //check range
 
