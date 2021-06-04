@@ -12,7 +12,6 @@ namespace metric_api.Controllers
     [Route("api/square-meter")]
     public class SquareMeterController : ControllerBase
     {
-
         [HttpGet]
         public async Task<IActionResult> GetAsync([FromServices] DataContext _ctx)
         {

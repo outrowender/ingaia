@@ -12,15 +12,9 @@ public class SquareMeterControllerTests : IntegrationTests
     {
         // Act
         var response = await _client.GetAsync("api/square-meter");
-        //var content = await response.Content.ReadAsStringAsync(); //TODO: fix json serialization DI
-
-        //var entity = SquareMeter.Deserialize(content);
 
         // Assert
         Assert.True(response.IsSuccessStatusCode);
-
-        //Assert.NotNull(entity.Meters);
-        //Assert.NotNull(entity.Value);
     }
 
     [Fact]
