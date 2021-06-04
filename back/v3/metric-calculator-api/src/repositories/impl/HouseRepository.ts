@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ICalculateHouseRequestDTO } from "../../useCases/calculateHouse/ICalculateHouseDTO";
 import { IHouseRepository } from "../IHouseRepository";
 import { IMeterRequestDTO } from "../IHouseRepositoryDTOs";
 
