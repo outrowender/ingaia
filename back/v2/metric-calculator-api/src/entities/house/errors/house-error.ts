@@ -1,0 +1,3 @@
+interface HouseError {
+    message: string
+}
