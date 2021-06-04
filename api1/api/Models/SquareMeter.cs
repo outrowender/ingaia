@@ -11,7 +11,7 @@ namespace metric_api.Models
         {
             this.Meters = 1;
 
-            if (value <= 0) throw new ArgumentException("Square meter should be over zero value!");
+            if (value <= 0) throw new ArgumentException("Square meter should be higher then zero!");
             this.Value = value;
         }
 
