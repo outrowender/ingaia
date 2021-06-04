@@ -1,4 +1,4 @@
-import { Either, left, right } from "../../shared/monads/either";
+import { Either, left, right } from "../../shared/monads/Either";
 import { InvalidMeterValueError } from "./errors/InvalidMeterValueError";
 import { InvalidSizeError } from "./errors/InvalidSizeError";
 

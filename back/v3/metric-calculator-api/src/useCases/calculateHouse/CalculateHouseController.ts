@@ -1,25 +1,25 @@
-import { Request, Response } from "express";
+import { badRequest, ok, unprocessableEntity } from "../../shared/helpers/HttpHelpers";
+import { IController } from "../../shared/interfaces/IController";
+import { IHttpRequest, IHttpResponse } from "../../shared/interfaces/IHttp";
 import { CalculateHouseUseCase } from "./CalculateHouseUseCase";
 
-export class CalculateHouseController {
+export class CalculateHouseController implements IController {
     constructor(private useCase: CalculateHouseUseCase) { }
 
-    async handle(request: Request, response: Response): Promise<Response> {
+    async handle(request: IHttpRequest): Promise<IHttpResponse> {
 
         const valid = this.validate(request.body)
-        if (!valid) return response.status(422).json({ message: 'Unexpected Error' })
-
+        if (!valid) return unprocessableEntity(new Error('Size is invalid'))
         const { size } = request.body
 
         try {
             const result = await this.useCase.execute({ size })
-            return response.status(200).send(result)
+            return ok(result)
 
         } catch (error) {
-            return response.status(400).json({
-                message: error.message || 'Unexpected Error'
-            })
+            return badRequest(new Error(error.message || 'Unexpected Error'))
         }
+
     }
 
     private validate(obj: object) {
