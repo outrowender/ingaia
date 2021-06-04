@@ -1,4 +1,5 @@
 import { House } from "../../entities/house/house";
+import { Meter } from "../../external/interfaces/meter";
 import { MeterRepository } from "../../external/interfaces/meter-repository";
 import { Either, left, right } from "../../shared/either";
 import { CalculateHouseValue } from "./calculate-house-value";
@@ -8,7 +9,7 @@ export class CalculateHouseValueImpl implements CalculateHouseValue {
     private readonly meterRepository: MeterRepository
 
     async call(size: number): Promise<Either<CalculateHouseError, number>> {
-        let meterValue: number
+        let meterValue: Meter
 
         try {
             meterValue = await this.meterRepository.loadMeterValue()
@@ -16,7 +17,7 @@ export class CalculateHouseValueImpl implements CalculateHouseValue {
             return left(new LoadMeterValueError('Error loading meter value from api'))
         }
 
-        const houseOrError = House.create(size, meterValue)
+        const houseOrError = House.create(size, meterValue.value)
 
         if (houseOrError.isLeft()) return left(houseOrError.value)
 

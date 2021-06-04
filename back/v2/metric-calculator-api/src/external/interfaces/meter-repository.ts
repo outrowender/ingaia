@@ -1,3 +1,5 @@
+import { Meter } from "./meter";
+
 export interface MeterRepository {
-    loadMeterValue: () => Promise<number>
+    loadMeterValue: () => Promise<Meter>
 }
