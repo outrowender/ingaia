@@ -7,4 +7,4 @@ const houseRepository = new HouseRepository()
 const calculateHouseUseCase = new CalculateHouseUseCase(houseRepository)
 const calculateHouseController = new CalculateHouseController(calculateHouseUseCase)
 
-export { calculateHouseUseCase, calculateHouseController }
+export { houseRepository, calculateHouseUseCase, calculateHouseController }
