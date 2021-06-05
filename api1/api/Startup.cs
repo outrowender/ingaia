@@ -46,7 +46,8 @@ namespace metric_api
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Metric API v1");
+                logger.LogInformation("Swagger running at /swagger route");
             });
 
             app.UseRouting();
