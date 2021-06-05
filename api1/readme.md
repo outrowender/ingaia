@@ -13,9 +13,9 @@ A solução é composta por dois projetos, onde `metric-api` é o código base d
 
 Dentro de cada projeto existem outros arquivos para explicar melhor como cada um funciona.
 
-[readme metric-api](TODO.api/readme.md)
+[readme metric-api](./api/readme.md)
 
-[readme metric-api.tests](TODO.tests/readme.md)
+[readme metric-api.tests](./tests/readme.md)
 
 |Bibliotecas utilizadas nos projetos|
 | ------ |
@@ -29,7 +29,7 @@ Dentro de cada projeto existem outros arquivos para explicar melhor como cada um
 
 É necessário o [.NET 5 SDK configurado](TODO:dotnetconfigure) no ambiente.
 
-- Configure o valor do metro quadrado no arquivo [Startup.cs](TODO/api/Startup.cs) no método `GetSquareMeterValue`.
+- Configure o valor do metro quadrado no arquivo [Startup.cs](./api/Startup.cs) no método `GetSquareMeterValue`.
 
 ```cs
 private float GetSquareMeterValue() => 10; //<- seu valor vai aqui
