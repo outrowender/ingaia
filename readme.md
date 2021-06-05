@@ -20,7 +20,7 @@ Por ser uma prova de conceito, tentei não fazer *Overengineering* então deixei
 
 Na API1 usei `.NET 5` e `inmemory database` para armazenar os dados junto da estrutura padrão .NET Web API de aplicações dotnet.
 
-Na API2 usei `Node 16` com `Typescript` e uma estrutura baseada em casos de uso, para consumir dados da API1 e fazer o processamento.
+Na API2 usei `Node` com `Typescript` e uma estrutura baseada em casos de uso, para consumir dados da API1 e fazer o processamento.
 
 No readme de cada projeto eu deixei listado os frameworks usados, um pouco mais da estrutura do projeto e como rodar cada um individualmente.
 
