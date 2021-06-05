@@ -22,6 +22,7 @@ Dentro de cada projeto existem outros arquivos para explicar melhor como cada um
 |.NET 5 |
 |EF InMemory para armazenamento de dados|
 |XUNIT para testes|
+|Swashbuckle para geração da documentação do swagger|
 
 #
 
