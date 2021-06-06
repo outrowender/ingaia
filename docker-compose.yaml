@@ -1,7 +1,19 @@
 version: "3"
 
 services:
-  fivem:
+  api1:
+    environment:
+      - PORT=5000
+    ports:
+      - 5000:5000
     build:
-      context: .
+      context: api1
+      dockerfile: Dockerfile
+  api2:
+    environment:
+      - PORT=3333
+    ports:
+      - 3333:3333
+    build:
+      context: api2
       dockerfile: Dockerfile
