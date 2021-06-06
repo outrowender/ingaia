@@ -10,7 +10,7 @@ services:
   api2:
     environment:
       - PORT=8080
-      - API1_HOST=http://localhost:5000
+      - API1_HOST=http://outrowender-ingaia-api1.herokuapp.com
     ports:
       - 8080:8080
     build:

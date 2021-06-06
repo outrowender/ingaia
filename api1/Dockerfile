@@ -1,17 +1,21 @@
-# https://hub.docker.com/_/microsoft-dotnet
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 as base
 WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
 
 COPY . .
 
-RUN dotnet restore api1
+WORKDIR /src/api
 
-WORKDIR /app/api1
+RUN dotnet restore metric-api.csproj 
+RUN dotnet build --no-restore -c Release -o /app
 
-RUN dotnet publish -c release -o build --no-restore
+FROM build AS publish
+RUN dotnet publish --no-restore -c Release -o /app
 
-# final stage/image
-FROM mcr.microsoft.com/dotnet/aspnet:5.0
+FROM base AS final
 WORKDIR /app
-COPY --from=build /app/api1 ./
-ENTRYPOINT ["dotnet", "metric-api.dll"]
+COPY --from=publish /app .
+
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet "metric-api.dll"

@@ -7,9 +7,6 @@ COPY . .
 WORKDIR /app/api2
 
 RUN npm install
-
 RUN npm run build
 
-CMD ["npm","start"]
-
-EXPOSE 3333
+CMD API1_HOST=http://outrowender-ingaia-api1.herokuapp.com npm start
