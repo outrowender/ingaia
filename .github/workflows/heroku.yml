@@ -19,9 +19,9 @@ jobs:
     #    dockerfile_path: api1/
         
     - name: Deploy api2 to Heroku
-      uses: jctaveras/heroku-deploy@v2.1.3
+      uses: gonuit/heroku-docker-deploy@v1.3.3
       with:
         email: outrowender@gmail.com
         api_key: ${{ secrets.heroku_api_key }}
         app_name: outrowender-ingaia-api2
-        dockerfile_path: api2/
+        dockerfile_directory: api2/
