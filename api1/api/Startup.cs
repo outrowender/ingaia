@@ -79,7 +79,7 @@ namespace metric_api
         }
 
         private float GetSquareMeterValue() => 10;
-        //TODO: this can be added to a configuration file, and configured to restart the application everytime the file change.
+        //TODO: this can be loaded in a environment variable or to a configuration file, and the application can be restarted everytime this config changes.
 
     }
 }

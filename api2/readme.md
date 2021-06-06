@@ -35,6 +35,7 @@ A solução é composta por um projeto `Node` usando `Typescript` e `express` co
 
 No [package.json](./package.json) foram configurados alguns scripts para facilitar o build e deploy:
 
-- `npm start` transpila o Typescript, ativa um ¨hot restart¨ para subir alterações nos arquivos e sobe o projeto.
-- `npm test` roda o Jest e executa os testes da aplicação
-- `npm build` transpila o código em Javascript no modo Prod e sobe o conteúdo para a pasta `dist`
+- `npm dev` transpila o Typescript, ativa um ¨hot restart¨ para subir alterações nos arquivos e sobe o projeto.
+- `npm test` roda o Jest e executa os testes da aplicação.
+- `npm build` transpila o código em Javascript no modo Prod e sobe o conteúdo para a pasta `dist`.
+- `npm start` roda o projeto transpilado em modo de produção.

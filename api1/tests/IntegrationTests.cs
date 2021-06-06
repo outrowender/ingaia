@@ -29,7 +29,7 @@ namespace metric_api.tests
                             opt.UseInMemoryDatabase("MetricsTestDatabase");
                         });
 
-                        ServiceProvider providers = services.BuildServiceProvider(); //TODO: encapsulate this
+                        ServiceProvider providers = services.BuildServiceProvider(); //TODO: this can be encapsulated
                         _dataContext = providers.GetService<DataContext>();
                     });
 

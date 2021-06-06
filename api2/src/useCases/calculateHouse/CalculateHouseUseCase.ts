@@ -21,7 +21,7 @@ export class CalculateHouseUseCase {
                 result: house.totalValue
             }
         } else
-            throw new Error('Error calculating values')// TODO: use custom errors
+            throw new Error('Error calculating values')// TODO: better custom errors can be used here
 
     }
 }

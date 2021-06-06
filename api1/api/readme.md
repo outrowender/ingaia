@@ -8,11 +8,11 @@ Quando o controller recebe um request para esse dado, ele busca o valor na base 
 - [Startup.cs](Startup.cs)
     - Responsável pela inicialização da aplicação, aqui é configurada a conexão com a base de dados e um seed adiciona o valor do metro no banco de dados.
 
-- [Models](TODO/Models)
+- [Models](./Models)
     - Nessa pasta fica a base do domínio da aplicação, contendo transformações, validações e outras coisas relevantes para a entidade, e também é usada também como modelo de dados para o EF. Aqui é validado o valor padrão armazenado no banco antes de ser validado pelo controller.
 
-- [Controllers](TODO/Controllers)
+- [Controllers](./Controllers)
     - Nessa pasta é onde os requests para a api são orquestradas. Geralmente aqui as classes consomem dados via DI da camada de DATA, fazem as transformações necessárias usando as classes do domínio e devolvem o request em formato JSON.
     
-- [Data](TODO/Data)
+- [Data](./Data)
     - Aqui fica a responsabilidade de fazer conexão com a banco de dados e fazer a conversão para o modelo EF. Essa parte é responsável por buscar o valor o padrão da metragem.

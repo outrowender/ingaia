@@ -28,7 +28,7 @@ Dentro de cada projeto existem outros arquivos para explicar melhor como cada um
 
 ## Compile você mesmo:
 
-É necessário o [.NET 5 SDK configurado](TODO:dotnetconfigure) no ambiente.
+É necessário o [.NET 5 SDK configurado](https://docs.microsoft.com/en-us/dotnet/core/install/linux) no ambiente.
 
 - Configure o valor do metro quadrado no arquivo [Startup.cs](./api/Startup.cs) no método `GetSquareMeterValue`.
 
