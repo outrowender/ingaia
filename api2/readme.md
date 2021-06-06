@@ -4,6 +4,8 @@ Seguindo a proposta
 ```
 API2 - Recebe quantidade de metros quadrados e calcula o valor do imóvel
 ```
+[Link do Swagger desse projeto](https://outrowender-ingaia-api2.herokuapp.com/swagger/)
+
 Essa api consome o valor da API1 e calcula o valor total do imóvel.
 
 ## O projeto
