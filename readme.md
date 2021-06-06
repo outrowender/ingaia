@@ -14,7 +14,6 @@ Seguindo o proposto para o desenvolvimento:
 API1 - Retorna o valor fixo do metro quadrado
 
 API2 - Recebe quantidade de metros quadrados e calcula o valor do imóvel
-
 ```
 
 O projeto foi desenvolvido usando conceitos da Clean Architecture, Domain-Driven Design, Test-Driven Development e SOLID.
