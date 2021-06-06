@@ -1,4 +1,4 @@
-name: Deploy containers to heroku
+name: Build, test and deploy to Heroku
 
 on:
   push:
@@ -11,18 +11,27 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Test api1
+    - name: build and test api1
       uses: actions/setup-dotnet@v1.8.0
       with:
           dotnet-version: 5.0.x
-    - name: Install dependencies
+    - name: install dependencies api1
       run: dotnet restore api1
-    - name: Build
+    - name: build api1
       run: dotnet build api1
-    - name: Test
+    - name: test api1
       run: dotnet test api1 --no-restore --verbosity normal
       
-    - name: Deploy api1 to Heroku
+    - name: build and test api2
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: 14
+    - name: install dependencies api2
+      run: cd api2 && npm install
+    - name: test api2
+      run: cd api2 && npm run test
+      
+    - name: deploy api1
       uses: gonuit/heroku-docker-deploy@v1.3.3
       with:
         email: outrowender@gmail.com
@@ -30,7 +39,7 @@ jobs:
         heroku_app_name: outrowender-ingaia-api1
         dockerfile_directory: api1/
         
-    - name: Deploy api2 to Heroku
+    - name: deploy api2
       uses: gonuit/heroku-docker-deploy@v1.3.3
       with:
         email: outrowender@gmail.com
