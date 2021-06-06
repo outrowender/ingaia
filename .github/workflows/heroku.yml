@@ -16,7 +16,7 @@ jobs:
         email: outrowender@gmail.com
         api_key: ${{ secrets.heroku_api_key }}
         app_name: outrowender-ingaia-api1
-        dockerfile_path: ap1/
+        dockerfile_path: api1
         
     - name: Deploy api2 to Heroku
       uses: techmmunity/docker-heroku-deploy@v1.0.0
@@ -24,4 +24,4 @@ jobs:
         email: outrowender@gmail.com
         api_key: ${{ secrets.heroku_api_key }}
         app_name: outrowender-ingaia-api2
-        dockerfile_path: api2/
+        dockerfile_path: api2
