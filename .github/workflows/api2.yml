@@ -1,4 +1,4 @@
-name: Run Nodejs Tests in api2
+name: Run node tests in api2
 
 on:
   push:
