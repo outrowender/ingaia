@@ -2,11 +2,11 @@ FROM node:14
 
 WORKDIR /app
 
-COPY . .
+COPY ./api2/ .
 
 RUN npm install
 
-RUN npm build
+RUN npm run build
 
 EXPOSE 3333
 
