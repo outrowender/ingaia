@@ -10,6 +10,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Test api1
+      uses: actions/setup-dotnet@v1.8.0
+      with:
+          dotnet-version: 5.0.x
+    - name: Install dependencies
+      run: dotnet restore api1
+    - name: Build
+      run: dotnet build api1
+    - name: Test
+      run: dotnet test api1 --no-restore --verbosity normal
+      
     - name: Deploy api1 to Heroku
       uses: gonuit/heroku-docker-deploy@v1.3.3
       with:
