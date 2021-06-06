@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy api1 to Heroku
-      uses: cloutojp/heroku-deploy@v2.0.7
+      uses: lucassarcanjo/heroku-deploy@2.1.17
       with:
         email: outrowender@gmail.com
         api_key: ${{ secrets.heroku_api_key }}
@@ -19,7 +19,7 @@ jobs:
         dockerfile_path: api1/
         
     - name: Deploy api2 to Heroku
-      uses: cloutojp/heroku-deploy@v2.0.7
+      uses: lucassarcanjo/heroku-deploy@2.1.17
       with:
         email: outrowender@gmail.com
         api_key: ${{ secrets.heroku_api_key }}
