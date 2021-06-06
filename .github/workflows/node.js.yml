@@ -2,8 +2,8 @@ name: Run tests
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
+    paths:
+      - 'api2/**'
     branches: [ main ]
 
 jobs:
@@ -19,6 +19,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd api2
     - run: npm install
     - run: npm test
