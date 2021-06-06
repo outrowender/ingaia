@@ -4,6 +4,8 @@ Seguindo a proposta
 ```
 API1 - Retorna o valor fixo do metro quadrado
 ```
+[Link do Swagger desse projeto](https://outrowender-ingaia-api1.herokuapp.com/swagger/)
+
 Essa api salva um valor numérico no banco e pode ser consumida via HTTP.
 
 Esse valor uma vez definido na inicialização da aplicação não pode ser alterado via HTTP. Ela é `somente leitura`.
