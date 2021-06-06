@@ -23,13 +23,13 @@ Usei as pipelines do github para subir os containers criados no docker, fazer o 
 
 O pipeline roda sempre que for feito um commit da branch main, e executa os testes antes do deploy e se algum teste falhar, o deploy é interrompido e um email enviado para o responsável pelo projeto.
 
-Por ser uma prova de conceito, tentei não fazer *Overengineering* então deixei alguns comentários no código em forma de `TODOs` em pontos que podem ser melhorados para deixar o projeto mais próximo da vida real ou torná-lo mais escalável, mas nada que atrapalhe a proposta inicial.
-
 ### Sobre o projeto
 
 Na API1 usei `.NET 5` e `inmemory database` para armazenar os dados junto da estrutura padrão .NET Web API de aplicações dotnet.
 
 Na API2 usei `Node` com `Typescript` e uma estrutura baseada em casos de uso, para consumir dados da API1 e fazer o processamento.
+
+Por ser uma prova de conceito, tentei não fazer *Overengineering* então deixei alguns comentários no código em forma de `TODOs` em pontos que podem ser melhorados para deixar o projeto mais próximo da vida real ou torná-lo mais escalável, mas nada que atrapalhe a proposta inicial.
 
 ## Executar usando docker
 
