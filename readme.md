@@ -2,16 +2,20 @@
 
 Esse projeto segue o proposto para o [desafio backend](https://github.com/ingaia/backend-challenge) da Ingaia.
 
+- Link da api 1 
+[https://outrowender-ingaia-api1.herokuapp.com](https://outrowender-ingaia-api1.herokuapp.com/swagger)
+
+- Link da api 2 [https://outrowender-ingaia-api2.herokuapp.com](https://outrowender-ingaia-api2.herokuapp.com/swagger)
+
+<p><img src="https://github.com/outrowender/ingaia/workflows/Build,%20test%20and%20deploy%20to%20Heroku/badge.svg"></p>
+
 Seguindo o proposto para o desenvolvimento:
 ```
 API1 - Retorna o valor fixo do metro quadrado
 
 API2 - Recebe quantidade de metros quadrados e calcula o valor do imóvel
-```
-- Link da api 1 
-[https://outrowender-ingaia-api1.herokuapp.com](https://outrowender-ingaia-api1.herokuapp.com/swagger)
 
-- Link da api 2 [https://outrowender-ingaia-api2.herokuapp.com](https://outrowender-ingaia-api2.herokuapp.com/swagger)
+```
 
 O projeto foi desenvolvido usando conceitos da Clean Architecture, Domain-Driven Design, Test-Driven Development e SOLID.
 
@@ -26,6 +30,15 @@ Por ser uma prova de conceito, tentei não fazer *Overengineering* então deixei
 Na API1 usei `.NET 5` e `inmemory database` para armazenar os dados junto da estrutura padrão .NET Web API de aplicações dotnet.
 
 Na API2 usei `Node` com `Typescript` e uma estrutura baseada em casos de uso, para consumir dados da API1 e fazer o processamento.
+
+## Executar usando docker
+
+Para rodar o ambiente do projeto usando do docker, existem configurações disponíveis no `docker-compose.yaml`.
+
+Na pasta raiz do projeto execute o comando para subir o container.
+```
+docker-compose up
+```
 
 No readme de cada projeto eu deixei listado os frameworks usados, um pouco mais da estrutura do projeto e como rodar cada um individualmente.
 
