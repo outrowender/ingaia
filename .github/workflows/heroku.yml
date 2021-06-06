@@ -1,4 +1,4 @@
-name: Run node tests in api2
+name: Deploy containers to heroku
 
 on:
   push:
@@ -7,15 +7,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+    - name: Deploy api1 to Heroku
+      uses: techmmunity/docker-heroku-deploy@v1.0.0
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: cd api2 && npm install
-    - run: cd api2 && npm test
+        email: outrowender@gmail.com
+        api_key: ${{ secrets.heroku_api_key }}
+        app_name: outrowender-ingaia-api1
+        dockerfile_path: ap1/
+        
+    - name: Deploy api2 to Heroku
+      uses: techmmunity/docker-heroku-deploy@v1.0.0
+      with:
+        email: outrowender@gmail.com
+        api_key: ${{ secrets.heroku_api_key }}
+        app_name: outrowender-ingaia-api2
+        dockerfile_path: api2/
