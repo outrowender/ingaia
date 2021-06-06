@@ -2,7 +2,9 @@ FROM node:14
 
 WORKDIR /app
 
-COPY ./api2/ .
+COPY . .
+
+WORKDIR /app/api2
 
 RUN npm install
 
