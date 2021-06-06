@@ -1,14 +1,10 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "allowJs": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "pretty": false,
+    "sourceMap": false, 
   },
-  "include": [
-    "src/**/*.ts"
+  "exclude": [
+    "src/**/*.spec.ts"
   ]
 }

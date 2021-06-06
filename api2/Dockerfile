@@ -1,11 +1,17 @@
 FROM node:14
 
-# Create app directory
-WORKDIR /usr/src/app
+WORKDIR /api2
 
-COPY package*.json ./
+COPY package.json ./
+COPY tsconfig.json ./
+COPY tsconfig.build.json ./
+
+COPY . .
 
 RUN npm install
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+RUN npm build
+
+EXPOSE 3333
+
+CMD ["npm","start"]

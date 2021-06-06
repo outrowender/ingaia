@@ -1,10 +1,10 @@
 # https://hub.docker.com/_/microsoft-dotnet
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /source
+WORKDIR /api1
 
 # copy everything and build app
 COPY api/. ./api/
-WORKDIR /source/api
+WORKDIR /api1/api
 
 RUN dotnet restore
 

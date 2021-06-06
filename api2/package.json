@@ -2,13 +2,12 @@
   "name": "metric-calculator-api",
   "version": "1.0.0",
   "author": "Wender",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/server.ts",
-    "test": "jest --verbose"
+    "start": "node dist/src/server.js",
+    "dev": "npx ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "test": "npx jest --verbose",
+    "build": "npx tsc --build tsconfig.build.json"
   },
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
