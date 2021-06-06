@@ -1,5 +1,7 @@
-import {app} from './app'
+import { app } from './app'
 
-app.listen(3333, () =>{
-    console.info('Server is running in port 3333')
+const port = process.env.PORT
+
+app.listen(port, () => {
+    console.info(`Server is running in port ${port}`)
 })

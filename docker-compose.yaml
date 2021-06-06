@@ -12,6 +12,7 @@ services:
   api2:
     environment:
       - PORT=3333
+      - API1_HOST=http://localhost:5000
     ports:
       - 3333:3333
     build:
