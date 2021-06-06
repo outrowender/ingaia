@@ -2,7 +2,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /source
 
-# copy everything else and build app
+# copy everything and build app
 COPY api/. ./api/
 WORKDIR /source/api
 
